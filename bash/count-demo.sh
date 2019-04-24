@@ -48,6 +48,7 @@ for data in "${ARR1[@]}"
 do
   # [ awk 对外部变量赋值 ]
   eval $(echo "$data" | awk -F" " '{printf("USERID=%s\nEXCHANGE=%s\nSYMBOL=%s\nMOBIPHONE=%s\nVOLUME=%s",$1,$2,$3,$4,$5)}')
+  # [ 使用 grep 判断字符串关系 ]
   RESULT=`grep $MOBIPHONE phone`
   # [ 判断 shell 命令结果为空 ]
   if [ -z "$RESULT" ]; then
