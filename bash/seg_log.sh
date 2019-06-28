@@ -1,8 +1,10 @@
 #!/bin/bash
-  
-NOW=`date -d'-1 days' '+%G%m%d'`
 
+# 获得前一天的日期
+NOW=`date -d'-1 days' '+%G%m%d'`
+# 设置path
 path=$HOME/marsqr/var/log/
+# 遍历目录下的文件
 files=$(ls $path)
 for filename in $files
 do
